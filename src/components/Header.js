@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './Header.css';
 import Logo from '../assets/planet-1.png';
+import './Header.css';
 
 const Header = () => (
   <header>
@@ -15,11 +15,41 @@ const Header = () => (
         </div>
       </div>
       <ul>
-        <li><NavLink to="/rockets" activeClassName="active-link">Rockets</NavLink></li>
+        <li>
+          <NavLink
+            to="/rockets"
+            activeClassName="active-link"
+            style={({ isActive }) => ({
+              textDecoration: isActive ? 'underline' : 'none',
+            })}
+          >
+            Rockets
+          </NavLink>
+        </li>
         <div className="vert-lane" />
-        <li><NavLink to="/missions" activeClassName="active-link">Missions</NavLink></li>
+        <li>
+          <NavLink
+            to="/missions"
+            activeClassName="active-link"
+            style={({ isActive }) => ({
+              textDecoration: isActive ? 'underline' : 'none',
+            })}
+          >
+            Missions
+          </NavLink>
+        </li>
         <div className="vert-lane" />
-        <li><NavLink to="/my-profile" activeClassName="active-link">My Profile</NavLink></li>
+        <li>
+          <NavLink
+            to="/my-profile"
+            activeClassName="active-link"
+            style={({ isActive }) => ({
+              textDecoration: isActive ? 'underline' : 'none',
+            })}
+          >
+            My Profile
+          </NavLink>
+        </li>
       </ul>
     </nav>
   </header>
