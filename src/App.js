@@ -1,11 +1,11 @@
 import './App.css';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>First Setup</p>
-      </header>
+      <Header />
+      <div className="space-lane" />
     </div>
   );
 }
