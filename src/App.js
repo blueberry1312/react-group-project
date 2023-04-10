@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './App.css';
 import Header from './components/Header';
 import Missions from './components/Missions';
-import './App.css';
+import Rockets from './components/Rockets';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <div className="space-lane" />
         <Routes>
           <Route path="/missions" element={<Missions />} />
+          <Route path="/rockets" element={<Rockets />} />
         </Routes>
       </BrowserRouter>
     </div>
