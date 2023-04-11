@@ -7,7 +7,9 @@ export const fetchRockets = createAsyncThunk(
   'rockets/fetchRocket/',
   async () => {
     try {
-      return axios.get(API_URL);
+      const { data } = await axios.get(API_URL);
+      console.log(data);
+      return data;
     } catch (error) {
       return error;
     }
@@ -23,19 +25,20 @@ const initialState = {
 export const rocketsSlice = createSlice({
   name: 'rockets',
   initialState,
-  reducers: {
-    setRocketLoading: (state) => {
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(fetchRockets.pending, (state) => {
       state.isLoading = true;
-      state.error = null;
-    },
-    setRocketSuccess: (state, action) => {
+    });
+    builder.addCase(fetchRockets.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.missions = action.payload;
-    },
-    setRocketError: (state, action) => {
+      state.rockets = action.payload;
+      console.log(state.rockets);
+    });
+    builder.addCase(fetchRockets.rejected, (state, action) => {
       state.isLoading = false;
-      state.error = action.payload;
-    },
+      state.error = action.error.message;
+    });
   },
 });
 
