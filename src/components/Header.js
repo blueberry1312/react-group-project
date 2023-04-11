@@ -18,7 +18,7 @@ const Header = () => (
         <li>
           <NavLink
             to="/rockets"
-            activeClassName="active-link"
+            activeclassname="active-link"
             style={({ isActive }) => ({
               textDecoration: isActive ? 'underline' : 'none',
             })}
@@ -30,7 +30,7 @@ const Header = () => (
         <li>
           <NavLink
             to="/missions"
-            activeClassName="active-link"
+            activeclassname="active-link"
             style={({ isActive }) => ({
               textDecoration: isActive ? 'underline' : 'none',
             })}
@@ -42,7 +42,7 @@ const Header = () => (
         <li>
           <NavLink
             to="/my-profile"
-            activeClassName="active-link"
+            activeclassname="active-link"
             style={({ isActive }) => ({
               textDecoration: isActive ? 'underline' : 'none',
             })}
