@@ -9,8 +9,16 @@ const rootReducer = combineReducers({
   profileSlice: profileReducer,
 });
 
+// const store = configureStore({
+//   reducer: rootReducer,
+//   getState: () => store.getState,
+// });
+
 const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    missions: missionsReducer,
+    rockets: rocketsReducer,
+  },
   getState: () => store.getState,
 });
 
