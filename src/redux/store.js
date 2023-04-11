@@ -11,6 +11,7 @@ const rootReducer = combineReducers({
 
 const store = configureStore({
   reducer: rootReducer,
+  getState: () => store.getState,
 });
 
 export default store;

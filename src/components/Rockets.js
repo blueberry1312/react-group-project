@@ -5,12 +5,10 @@ import { fetchRockets } from '../redux/rockets/rocketsSlice';
 const Rockets = () => {
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets);
-  console.log(rockets);
   const isLoading = useSelector((state) => state.isLoading);
   const error = useSelector((state) => state.error);
   useEffect(() => {
     dispatch(fetchRockets());
-    console.log(rockets);
   }, [dispatch]);
 
   if (isLoading) {
@@ -33,7 +31,7 @@ const Rockets = () => {
   return (
     <div>
       <p>Rocket Page</p>
-      {/* <div>
+      <div>
         {rockets.map((rocket) => (
           <div key={rocket.id}>
             <h2>{rocket.rocket_name}</h2>
@@ -43,7 +41,7 @@ const Rockets = () => {
             <p>{rocket.flicker_image[1]}</p>
           </div>
         ))}
-      </div> */}
+      </div>
     </div>
   );
 };
