@@ -6,7 +6,7 @@ const initialState = {
   error: null,
 };
 
-const rocketsSlice = createSlice({
+export const rocketsSlice = createSlice({
   name: 'rockets',
   initialState,
   reducers: {
@@ -24,8 +24,5 @@ const rocketsSlice = createSlice({
     },
   },
 });
-
-export const { setRocketLoading, setRocketSuccess, setRocketError } =
-  rocketsSlice.actions;
 
 export default rocketsSlice.reducer;
