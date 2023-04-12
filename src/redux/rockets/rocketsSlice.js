@@ -8,7 +8,6 @@ export const fetchRockets = createAsyncThunk(
   async () => {
     try {
       const { data } = await axios.get(API_URL);
-      console.log(data);
       return data;
     } catch (error) {
       return error;
@@ -32,8 +31,8 @@ export const rocketsSlice = createSlice({
     });
     builder.addCase(fetchRockets.fulfilled, (state, action) => {
       state.isLoading = false;
+      state.error = false;
       state.rockets = action.payload;
-      console.log(state.rockets);
     });
     builder.addCase(fetchRockets.rejected, (state, action) => {
       state.isLoading = false;
