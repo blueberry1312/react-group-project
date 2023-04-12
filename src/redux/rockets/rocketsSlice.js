@@ -12,7 +12,7 @@ export const fetchRockets = createAsyncThunk(
     } catch (error) {
       return error;
     }
-  }
+  },
 );
 
 const initialState = {

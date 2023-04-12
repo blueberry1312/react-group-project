@@ -25,7 +25,10 @@ const Rockets = () => {
     return (
       <>
         <p>unable to load the Rockets...</p>
-        <p>Error: {error}</p>
+        <p>
+          Error:
+          {error}
+        </p>
       </>
     );
   }
