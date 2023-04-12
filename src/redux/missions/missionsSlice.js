@@ -1,30 +1,32 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import spaceService from '../../api';
 
-const initialState = {
-  missions: [],
-  isLoading: false,
-  error: null,
-};
-
-const missionsSlice = createSlice({
-  name: 'mission',
-  initialState,
-  reducers: {
-    setMissionLoading: (state) => {
-      state.isLoading = true;
-      state.error = null;
-    },
-    setMissionSuccess: (state, action) => {
-      state.isLoading = false;
-      state.missions = action.payload;
-    },
-    setMissionError: (state, action) => {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
-  },
+export const fetchMissions = createAsyncThunk('missions/fetchMissions', async () => {
+  const missions = await spaceService.getMissions();
+  return missions;
 });
 
-export const { setMissionLoading, setMissionSuccess, setMissionError } = missionsSlice.actions;
+export const missionsSlice = createSlice({
+  name: 'missions',
+  initialState: {
+    missions: [],
+    status: 'idle',
+    error: null,
+  },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(fetchMissions.pending, (state) => {
+      state.status = 'loading';
+    });
+    builder.addCase(fetchMissions.fulfilled, (state, action) => {
+      state.status = 'succeeded';
+      state.missions = action.payload;
+    });
+    builder.addCase(fetchMissions.rejected, (state, action) => {
+      state.status = 'failed';
+      state.error = action.error.message;
+    });
+  },
+});
 
 export default missionsSlice.reducer;
