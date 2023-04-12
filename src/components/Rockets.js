@@ -16,6 +16,7 @@ const Rockets = () => {
     return (
       <>
         <p>loading...</p>
+        <div className="Rockets-loading" />
       </>
     );
   }
@@ -33,9 +34,13 @@ const Rockets = () => {
     <div>
       {rockets.map((rocket) => (
         <div key={rocket.id}>
-          <h2>{rocket.name}</h2>
-          <p>{rocket.description}</p>
-          <img src={rocket.flickr_images[0]} alt="" />
+          <div className="Rockets-img">
+            <img src={rocket.flickr_images[0]} alt={rocket.name} />
+          </div>
+          <div className="Rockets-content">
+            <h2>{rocket.name}</h2>
+            <p>{rocket.description}</p>
+          </div>
         </div>
       ))}
     </div>
