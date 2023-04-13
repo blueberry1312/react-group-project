@@ -47,6 +47,9 @@ const Rockets = () => {
           <div className="Rockets-content">
             <h2>{rocket.name}</h2>
             <p>{rocket.description}</p>
+            <button type="submit" className="Rockets-button">
+              Reserve Rocket
+            </button>
           </div>
         </div>
       ))}

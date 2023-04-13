@@ -45,3 +45,20 @@
 .Rockets-content h2 {
   margin: 0;
 }
+
+.Rockets-button {
+  color:  #fff;
+  background-color: #007BFF;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Rockets-button:hover {
+  background-color: #2d8df3;
+}
+
+.Rockets-button:active {
+  background-color: #08478b;
+}
