@@ -54,9 +54,6 @@ const Rockets = () => {
         const badgeDisplayed = isBooked
           ? 'Rocket-display-badge'
           : 'Rocket-no-display-badge';
-        {
-          /* const badgeDisplayed = isBooked ? rocket.reserved : false; */
-        }
 
         return (
           <div key={rocket.id} className="Rockets-container">

@@ -28,7 +28,7 @@ export const bookRocket = createAsyncThunk(
       return rocket;
     });
     return updatedRockets;
-  }
+  },
 );
 
 export const cancelBooking = createAsyncThunk(
@@ -44,7 +44,7 @@ export const cancelBooking = createAsyncThunk(
       return rocket;
     });
     return updatedRockets;
-  }
+  },
 );
 
 const initialState = {
