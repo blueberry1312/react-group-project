@@ -1,10 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  bookRocket,
-  cancelBooking,
-  fetchRockets,
-} from '../redux/rockets/rocketsSlice';
+import { bookRocket, cancelBooking } from '../redux/rockets/rocketsSlice';
 import './rockets.css';
 
 const Rockets = () => {
@@ -12,10 +8,6 @@ const Rockets = () => {
   const rockets = useSelector((state) => state.rockets.rockets);
   const isLoading = useSelector((state) => state.rockets.isLoading);
   const error = useSelector((state) => state.rockets.error);
-
-  useEffect(() => {
-    dispatch(fetchRockets());
-  }, [dispatch]);
 
   const handleBookRocket = (rocketId) => {
     dispatch(bookRocket(rocketId));

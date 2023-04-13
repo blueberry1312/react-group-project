@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchMissions, joinMission, leaveMission } from '../redux/missions/missionsSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  fetchMissions,
+  joinMission,
+  leaveMission,
+} from '../redux/missions/missionsSlice';
 import './Missions.css';
 
 const Missions = () => {
@@ -47,7 +51,9 @@ const Missions = () => {
       <tbody>
         {missions.map((mission) => {
           const isMember = mission.reserved;
-          const handleButtonClick = isMember ? handleLeaveMission : handleJoinMission;
+          const handleButtonClick = isMember
+            ? handleLeaveMission
+            : handleJoinMission;
           const buttonDisabled = isMember ? false : mission.reserved;
 
           return (
@@ -60,7 +66,12 @@ const Missions = () => {
                 </div>
               </td>
               <td>
-                <button type="button" className={isMember ? 'leave-button' : 'join-button'} onClick={() => handleButtonClick(mission.mission_id)} disabled={buttonDisabled}>
+                <button
+                  type="button"
+                  className={isMember ? 'leave-button' : 'join-button'}
+                  onClick={() => handleButtonClick(mission.mission_id)}
+                  disabled={buttonDisabled}
+                >
                   {isMember ? 'Leave Mission' : 'Join Mission'}
                 </button>
               </td>
