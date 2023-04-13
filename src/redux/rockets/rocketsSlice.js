@@ -31,6 +31,22 @@ export const bookRocket = createAsyncThunk(
   }
 );
 
+export const cancelBooking = createAsyncThunk(
+  'rockets/cancelBooking',
+  async (rocketId, { getState }) => {
+    const updatedRockets = getState().rockets.rockets.map((rocket) => {
+      if (rocket.id === rocketId) {
+        return {
+          ...rocket,
+          reserved: false,
+        };
+      }
+      return rocket;
+    });
+    return updatedRockets;
+  }
+);
+
 const initialState = {
   rockets: [],
   isLoading: false,
@@ -55,7 +71,10 @@ export const rocketsSlice = createSlice({
       state.error = action.error.message;
     });
     builder.addCase(bookRocket.fulfilled, (state, action) => {
-      state.missions = action.payload;
+      state.rockets = action.payload;
+    });
+    builder.addCase(cancelBooking.fulfilled, (state, action) => {
+      state.rockets = action.payload;
     });
   },
 });

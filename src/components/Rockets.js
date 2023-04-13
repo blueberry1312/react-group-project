@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRockets } from '../redux/rockets/rocketsSlice';
+import { bookRocket, fetchRockets } from '../redux/rockets/rocketsSlice';
 import './rockets.css';
 
 const Rockets = () => {
@@ -12,6 +12,10 @@ const Rockets = () => {
   useEffect(() => {
     dispatch(fetchRockets());
   }, [dispatch]);
+
+  const handleBookRocket = (rocketId) => {
+    dispatch(bookRocket(rocketId));
+  };
 
   if (isLoading) {
     return (
