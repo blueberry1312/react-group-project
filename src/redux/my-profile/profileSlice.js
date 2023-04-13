@@ -1,4 +1,20 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+
+export const getBookedRocket = createAsyncThunk(
+  'profile/getBookedRocket',
+  async (rocketId, { getState }) => {
+    const updatedRockets = getState().rockets.rockets.filter((rocket) => {
+      if (rocket.id !== rocketId) {
+        return {
+          ...rocket,
+          reserved: true,
+        };
+      }
+      return rocket;
+    });
+    return updatedRockets;
+  }
+);
 
 const initialState = {
   profile: [],
@@ -22,6 +38,11 @@ export const profileSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     },
+  },
+  extraReducers(builder) {
+    builder.addCase(getBookedRocket.fulfilled, (state, action) => {
+      state.rockets = action.payload;
+    });
   },
 });
 
