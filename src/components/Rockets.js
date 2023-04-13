@@ -15,7 +15,7 @@ const Rockets = () => {
 
   useEffect(() => {
     dispatch(fetchRockets());
-  }, [dispatch]);
+  }, []);
 
   const handleBookRocket = (rocketId) => {
     dispatch(bookRocket(rocketId));
