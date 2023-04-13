@@ -23,10 +23,42 @@ tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-tr:hover {
-  background-color: #ddd;
-}
-
 td:first-child {
   font-weight: bold;
+}
+
+.status {
+  text-align: center;
+}
+
+.member {
+  display: inline-block;
+  background-color: #3a96cc;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.not-member {
+  display: inline-block;
+  background-color: grey;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.join-button {
+  background-color: transparent;
+  color: grey;
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.leave-button {
+  background-color: transparent;
+  color: red;
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 5px;
 }

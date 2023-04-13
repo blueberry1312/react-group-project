@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchMissions } from '../redux/missions/missionsSlice';
+import { fetchMissions, joinMission, leaveMission } from '../redux/missions/missionsSlice';
 import './Missions.css';
 
 const Missions = () => {
@@ -12,6 +12,14 @@ const Missions = () => {
   useEffect(() => {
     dispatch(fetchMissions());
   }, [dispatch]);
+
+  const handleJoinMission = (missionId) => {
+    dispatch(joinMission(missionId));
+  };
+
+  const handleLeaveMission = (missionId) => {
+    dispatch(leaveMission(missionId));
+  };
 
   if (status === 'loading') {
     return <div>Loading...</div>;
@@ -25,6 +33,7 @@ const Missions = () => {
       </div>
     );
   }
+
   return (
     <table>
       <thead>
@@ -36,14 +45,28 @@ const Missions = () => {
         </tr>
       </thead>
       <tbody>
-        {missions.map((mission) => (
-          <tr key={mission.mission_id}>
-            <td>{mission.mission_name}</td>
-            <td>{mission.description}</td>
-            <td>N/A</td>
-            <td>N/A</td>
-          </tr>
-        ))}
+        {missions.map((mission) => {
+          const isMember = mission.reserved;
+          const handleButtonClick = isMember ? handleLeaveMission : handleJoinMission;
+          const buttonDisabled = isMember ? false : mission.reserved;
+
+          return (
+            <tr key={mission.mission_id}>
+              <td>{mission.mission_name}</td>
+              <td>{mission.description}</td>
+              <td className="status">
+                <div className={isMember ? 'member' : 'not-member'}>
+                  {isMember ? 'Active Member' : 'NOT A MEMBER'}
+                </div>
+              </td>
+              <td>
+                <button type="button" className={isMember ? 'leave-button' : 'join-button'} onClick={() => handleButtonClick(mission.mission_id)} disabled={buttonDisabled}>
+                  {isMember ? 'Leave Mission' : 'Join Mission'}
+                </button>
+              </td>
+            </tr>
+          );
+        })}
       </tbody>
     </table>
   );
