@@ -1,0 +1,42 @@
+.MyProfile {
+  display: flex;
+  justify-content: space-between;
+}
+
+.table-rockets {
+  border-collapse: collapse;
+  width: 30vw;
+}
+
+.table-missions {
+  border-collapse: collapse;
+  width: 30vw;
+}
+
+.td-rockets,
+.td-missions {
+  padding: 30px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.h2-myprofile {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.rockets-list {
+  flex: 1;
+}
+
+.missions-list {
+  flex: 1;
+}
+
+.container-rockets {
+  text-align: center;
+}
+
+.container-missions {
+  text-align: center;
+}
