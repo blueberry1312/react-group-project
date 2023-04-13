@@ -45,3 +45,34 @@
 .Rockets-content h2 {
   margin: 0;
 }
+
+.Rockets-content button {
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.Rockets-content button:hover {
+  background-color: #2d8df3;
+}
+
+.Rockets-content button:active {
+  background-color: #08478b;
+}
+
+.Rocket-display-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  color: #fff;
+  background-color: #18a2b8;
+  padding: 2px 8px;
+  margin-right: 10px;
+  border-radius: 3px;
+}
+
+.Rocket-no-display-badge {
+  display: none;
+}
