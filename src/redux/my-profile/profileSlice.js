@@ -6,7 +6,7 @@ export const getBookedRocket = createAsyncThunk(
     const { rockets } = getState().rockets;
     const bookedRockets = rockets.filter((rocket) => rocket.reserved);
     return bookedRockets;
-  }
+  },
 );
 
 const initialState = {
@@ -22,7 +22,6 @@ export const profileSlice = createSlice({
   extraReducers(builder) {
     builder.addCase(getBookedRocket.fulfilled, (state, action) => {
       state.rockets = action.payload;
-      console.log(state.rockets);
     });
   },
 });
