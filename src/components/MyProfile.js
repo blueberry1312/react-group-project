@@ -1,14 +1,10 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getBookedRocket } from '../redux/my-profile/profileSlice';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 const MyProfile = () => {
-  const dispatch = useDispatch();
-  const rockets = useSelector((state) => state.rockets.rockets);
-
-  useEffect(() => {
-    dispatch(getBookedRocket());
-  }, []);
+  const rockets = useSelector((state) =>
+    state.rockets.rockets.filter((rocket) => rocket.reserved)
+  );
 
   return (
     <div>

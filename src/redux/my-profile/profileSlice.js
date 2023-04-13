@@ -1,11 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export const getBookedRocket = createAsyncThunk(
-  'profile/getBookedRocket',
+  'rockets/getBookedRocket',
   async (_, { getState }) => {
-    const { rockets } = getState();
-    const updatedRockets = rockets.filter((rocket) => rocket.reserved);
-    return updatedRockets;
+    const { rockets } = getState().rockets;
+    const bookedRockets = rockets.filter((rocket) => rocket.reserved);
+    return bookedRockets;
   }
 );
 
@@ -18,20 +18,7 @@ const initialState = {
 export const profileSlice = createSlice({
   name: 'profile',
   initialState,
-  reducers: {
-    setProfileLoading: (state) => {
-      state.isLoading = true;
-      state.error = null;
-    },
-    setProfileSuccess: (state, action) => {
-      state.isLoading = false;
-      state.missions = action.payload;
-    },
-    setProfileError: (state, action) => {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers(builder) {
     builder.addCase(getBookedRocket.fulfilled, (state, action) => {
       state.rockets = action.payload;
