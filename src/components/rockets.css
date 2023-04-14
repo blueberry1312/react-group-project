@@ -1,0 +1,83 @@
+.Rockets {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.Rockets-preloader {
+  width: 5rem;
+  height: 5rem;
+  border: 0.5rem solid rgb(204, 204, 208);
+  border-top: 0.5rem solid rgb(140, 139, 142);
+  margin: 2rem auto;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(0deg);  /* IE 9 */
+    transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: rotate(360deg);  /* IE 9 */
+    transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+  }
+}
+
+.Rockets-container {
+  display: flex;
+  margin: 2rem 0;
+}
+
+.Rocket-img {
+  display: inline-block;
+  width: 15rem;
+  margin-right: 1rem;
+}
+
+.Rockets-content {
+  text-align: left;
+}
+
+.Rockets-content h2 {
+  margin: 0;
+}
+
+.Rockets-content button {
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.Rockets-content button:hover {
+  background-color: #2d8df3;
+}
+
+.Rockets-content button:active {
+  background-color: #08478b;
+}
+
+.Rocket-display-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  color: #fff;
+  background-color: #18a2b8;
+  padding: 2px 8px;
+  margin-right: 10px;
+  border-radius: 3px;
+}
+
+.Rocket-no-display-badge {
+  display: none;
+}
+
+.h2-rockets {
+  text-align: center;
+  margin-bottom: 20px;
+}

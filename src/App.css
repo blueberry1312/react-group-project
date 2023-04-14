@@ -1,0 +1,6 @@
+.space-lane {
+  height: 1px;
+  width: 90%;
+  background-color: black;
+  display: inline-block;
+}
