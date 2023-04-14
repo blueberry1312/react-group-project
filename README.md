@@ -48,7 +48,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-- Just kanban board setup.
+- Displayed Rockets section with buttons to Reserve a rocket or cancel the reservation.
+- Displayed Missions section with button to Join/Leave missions.
+- Displayed My Profile section with Rockets and Missions reserved/joined.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -121,8 +124,8 @@ To run tests, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Add a button next to each mission that allows users to join the selected mission or leave the mission the user joined earlier.
-- Add a button to reserve and a cancel a rocket.
+- Style and create a home page.
+- Add test files for all components.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
