@@ -9,9 +9,9 @@ describe('App', () => {
     expect(headerElement).toBeInTheDocument();
   });
 
-  test('renders missions component by default', () => {
+  test('renders rockets component by default', () => {
     const { getByRole } = render(<App />);
-    expect(getByRole('heading', { name: /Welcome/i })).toBeInTheDocument();
+    expect(getByRole('heading', { name: /Rockets/i })).toBeInTheDocument();
   });
 
   test('renders rockets component when navigating to /rockets', () => {

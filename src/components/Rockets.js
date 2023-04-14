@@ -42,37 +42,46 @@ const Rockets = () => {
     <div>
       <h2 className="h2-rockets">Rockets</h2>
       <div title="rockets-component" className="Rockets">
-        {rockets.map((rocket) => {
-          const isBooked = rocket.reserved;
-          const handleClick = isBooked ? handleCancelBooking : handleBookRocket;
-          const badgeDisplayed = isBooked
-            ? 'Rocket-display-badge'
-            : 'Rocket-no-display-badge';
+        {rockets.map((rocket) => (
+          <div key={rocket.id} className="Rockets-container">
+            <img
+              src={rocket.flickr_images[0]}
+              alt={rocket.name}
+              className="Rocket-img"
+            />
+            <div className="Rockets-content">
+              <h2>{rocket.name}</h2>
+              <p>
+                {(rocket.reserved
+                && <span className="Rocket-display-badge">Booked</span>
+                )}
+                {rocket.description}
+              </p>
+              {(rocket.reserved
 
-          return (
-            <div key={rocket.id} className="Rockets-container">
-              <img
-                src={rocket.flickr_images[0]}
-                alt={rocket.name}
-                className="Rocket-img"
-              />
-              <div className="Rockets-content">
-                <h2>{rocket.name}</h2>
-                <p>
-                  <span className={badgeDisplayed}>Booked</span>
-                  {rocket.description}
-                </p>
-                <button
-                  type="submit"
-                  className={isBooked ? 'cancel-button' : 'book-button'}
-                  onClick={() => handleClick(rocket.id)}
-                >
-                  {isBooked ? 'Cancel Reservation' : 'Reserve Rocket'}
-                </button>
-              </div>
+              && (
+              <button
+                type="submit"
+                className="cancel-button"
+                onClick={() => handleCancelBooking(rocket.id)}
+              >
+                Cancel Reservation
+              </button>
+              ))}
+
+              {(!rocket.reserved
+              && (
+              <button
+                type="submit"
+                className="book-button"
+                onClick={() => handleBookRocket(rocket.id)}
+              >
+                Reserve Rocket
+              </button>
+              ))}
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );
