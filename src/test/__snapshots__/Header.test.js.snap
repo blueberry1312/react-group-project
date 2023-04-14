@@ -5,25 +5,31 @@ exports[`Header test Header component is displayed on the HTML 1`] = `
   title="header-component"
 >
   <nav>
-    <div
-      class="logo-container"
+    <a
+      aria-current="page"
+      class="active"
+      href="/"
     >
       <div
-        class="logo"
+        class="logo-container"
       >
-        <img
-          alt="Logo"
-          src="planet-1.png"
-        />
+        <div
+          class="logo"
+        >
+          <img
+            alt="Logo"
+            src="planet-1.png"
+          />
+        </div>
+        <div
+          class="title"
+        >
+          <h1>
+            Space Travelers Hub
+          </h1>
+        </div>
       </div>
-      <div
-        class="title"
-      >
-        <h1>
-          Space Travelers Hub
-        </h1>
-      </div>
-    </div>
+    </a>
     <ul>
       <li>
         <a

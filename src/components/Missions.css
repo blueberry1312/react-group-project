@@ -62,3 +62,8 @@ td:first-child {
   border-radius: 5px;
   padding: 5px;
 }
+
+.h2-missions {
+  text-align: center;
+  margin-bottom: 20px;
+}

@@ -33,15 +33,13 @@ describe('Rockets component', () => {
 
   beforeEach(() => {
     useDispatch.mockReturnValue(dispatchMock);
-    useSelector.mockImplementation((selector) =>
-      selector({
-        rockets: {
-          rockets: rocketsMock,
-          isLoading: false,
-          error: null,
-        },
-      })
-    );
+    useSelector.mockImplementation((selector) => selector({
+      rockets: {
+        rockets: rocketsMock,
+        isLoading: false,
+        error: null,
+      },
+    }));
   });
 
   afterEach(() => {
