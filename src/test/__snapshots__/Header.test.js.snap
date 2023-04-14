@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header test Header component is displayed on the HTML 1`] = `
+<header
+  title="header-component"
+>
+  <nav>
+    <div
+      class="logo-container"
+    >
+      <div
+        class="logo"
+      >
+        <img
+          alt="Logo"
+          src="planet-1.png"
+        />
+      </div>
+      <div
+        class="title"
+      >
+        <h1>
+          Space Travelers Hub
+        </h1>
+      </div>
+    </div>
+    <ul>
+      <li>
+        <a
+          activeclassname="active-link"
+          class=""
+          href="/rockets"
+          style="text-decoration: none;"
+        >
+          Rockets
+        </a>
+      </li>
+      <div
+        class="vert-lane"
+      />
+      <li>
+        <a
+          activeclassname="active-link"
+          class=""
+          href="/missions"
+          style="text-decoration: none;"
+        >
+          Missions
+        </a>
+      </li>
+      <div
+        class="vert-lane"
+      />
+      <li>
+        <a
+          activeclassname="active-link"
+          class=""
+          href="/my-profile"
+          style="text-decoration: none;"
+        >
+          My Profile
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+`;

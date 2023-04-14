@@ -4,7 +4,7 @@ import Logo from '../assets/planet-1.png';
 import './Header.css';
 
 const Header = () => (
-  <header>
+  <header title="header-component">
     <nav>
       <div className="logo-container">
         <div className="logo">
