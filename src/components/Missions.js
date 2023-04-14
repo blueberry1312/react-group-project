@@ -31,40 +31,43 @@ const Missions = () => {
   }
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Mission Name</th>
-          <th>Description</th>
-          <th>Status</th>
-          <th>Join/Leave</th>
-        </tr>
-      </thead>
-      <tbody>
-        {missions.map((mission) => {
-          const isMember = mission.reserved;
-          const handleButtonClick = isMember ? handleLeaveMission : handleJoinMission;
-          const buttonDisabled = isMember ? false : mission.reserved;
+    <div>
+      <h2 className="h2-missions">Missions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Mission Name</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Join/Leave</th>
+          </tr>
+        </thead>
+        <tbody>
+          {missions.map((mission) => {
+            const isMember = mission.reserved;
+            const handleButtonClick = isMember ? handleLeaveMission : handleJoinMission;
+            const buttonDisabled = isMember ? false : mission.reserved;
 
-          return (
-            <tr key={mission.mission_id}>
-              <td>{mission.mission_name}</td>
-              <td>{mission.description}</td>
-              <td className="status">
-                <div className={isMember ? 'member' : 'not-member'}>
-                  {isMember ? 'Active Member' : 'NOT A MEMBER'}
-                </div>
-              </td>
-              <td>
-                <button type="button" className={isMember ? 'leave-button' : 'join-button'} onClick={() => handleButtonClick(mission.mission_id)} disabled={buttonDisabled}>
-                  {isMember ? 'Leave Mission' : 'Join Mission'}
-                </button>
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+            return (
+              <tr key={mission.mission_id}>
+                <td>{mission.mission_name}</td>
+                <td>{mission.description}</td>
+                <td className="status">
+                  <div className={isMember ? 'member' : 'not-member'}>
+                    {isMember ? 'Active Member' : 'NOT A MEMBER'}
+                  </div>
+                </td>
+                <td>
+                  <button type="button" className={isMember ? 'leave-button' : 'join-button'} onClick={() => handleButtonClick(mission.mission_id)} disabled={buttonDisabled}>
+                    {isMember ? 'Leave Mission' : 'Join Mission'}
+                  </button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
   );
 };
 

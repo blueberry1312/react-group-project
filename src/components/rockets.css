@@ -76,3 +76,8 @@
 .Rocket-no-display-badge {
   display: none;
 }
+
+.h2-rockets {
+  text-align: center;
+  margin-bottom: 20px;
+}
