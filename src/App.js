@@ -7,7 +7,6 @@ import Header from './components/Header';
 import Missions from './components/Missions';
 import Rockets from './components/Rockets';
 import MyProfile from './components/MyProfile';
-import Home from './components/Home';
 
 function App() {
   return (
@@ -17,7 +16,7 @@ function App() {
           <Header />
           <div className="space-lane" />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Rockets />} />
             <Route path="/missions" element={<Missions />} />
             <Route path="/rockets" element={<Rockets />} />
             <Route path="/my-profile" element={<MyProfile />} />

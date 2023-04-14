@@ -43,28 +43,37 @@ const Missions = () => {
           </tr>
         </thead>
         <tbody>
-          {missions.map((mission) => {
-            const isMember = mission.reserved;
-            const handleButtonClick = isMember ? handleLeaveMission : handleJoinMission;
-            const buttonDisabled = isMember ? false : mission.reserved;
-
-            return (
-              <tr key={mission.mission_id}>
-                <td>{mission.mission_name}</td>
-                <td>{mission.description}</td>
-                <td className="status">
-                  <div className={isMember ? 'member' : 'not-member'}>
-                    {isMember ? 'Active Member' : 'NOT A MEMBER'}
-                  </div>
-                </td>
-                <td>
-                  <button type="button" className={isMember ? 'leave-button' : 'join-button'} onClick={() => handleButtonClick(mission.mission_id)} disabled={buttonDisabled}>
-                    {isMember ? 'Leave Mission' : 'Join Mission'}
+          {missions.map((mission) => (
+            <tr key={mission.mission_id}>
+              <td>{mission.mission_name}</td>
+              <td>{mission.description}</td>
+              <td className="status">
+                {(mission.reserved && <div className="member">Active Member</div>)}
+                {(!mission.reserved && <div className="member">NOT A MEMBER</div>)}
+              </td>
+              <td>
+                {(mission.reserved && (
+                  <button
+                    type="button"
+                    className="leave-button disabled"
+                    onClick={() => handleLeaveMission(mission.mission_id)}
+                  >
+                    Leave Mission
                   </button>
-                </td>
-              </tr>
-            );
-          })}
+                ))}
+
+                {(!mission.reserved && (
+                  <button
+                    type="button"
+                    className="join-button"
+                    onClick={() => handleJoinMission(mission.mission_id)}
+                  >
+                    Join Mission
+                  </button>
+                ))}
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
