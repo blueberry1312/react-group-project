@@ -55,6 +55,12 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- You can see a Live Demo clicking [here](https://react-group-project.onrender.com).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 ## Getting Started
 
@@ -112,7 +118,7 @@ To run tests, run the following command:
 
 - GitHub: [@blueberry1312](https://github.com/blueberry1312)
 - Twitter: [@nestorsitooo](https://twitter.com/nestorsitooo)
-- LinkedIn: [LinkedIn] (https://www.linkedin.com/in/nes-oro-658570225/)
+- LinkedIn: [Nes Oro](https://www.linkedin.com/in/nes-oro-658570225/)
 
 👤 **Kola Kolade**
 
